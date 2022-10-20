@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <i class="bx bxl-nodejs bx-sm"></i>
+          NodeJs-Crud</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 p-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <!-- Create a go back button -->
+      <a href="/" class="btn btn-outline-primary my-3">
+        <i class="bx bx-left-arrow-alt"></i>
+        Go Back!</a
+      >
+      <div class="card border-secondary">
+        <div class="card-header">Nuevo Registro</div>
+        <div class="card-body">
+          <form action="/save" method="POST">
+            <div class="mb-3">
+              <label for="user" class="form-label">Usuario</label>
+              <input
+                type="text"
+                class="form-control"
+                id="user"
+                name="user"
+                tabindex="1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="role" class="form-label">Role</label>
+              <select
+                id="role"
+                name="role"
+                class="form-select"
+                aria-label="Default select example"
+                tabindex="2"
+              >
+                <option value="Admin" selected>Admin</option>
+                <option value="Data Entry">Data Entry</option>
+                <option value="Developer">Developer</option>
+                <option value="UX/UI Designer">UX/UI designer</option>
+                <option value="Tester">Tester</option>
+                <option value="Marketing Specialist">
+                  Marketing Specialist
+                </option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" tabindex="5">
+              Guardar
+            </button>
+            <a href="/" class="btn btn-secondary">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

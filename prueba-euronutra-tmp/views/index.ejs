@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>EuroNutra!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <i class="bx bxl-nodejs bx-sm"></i>
+          NodeJs-Crud</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 p-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <a href="/create" class="btn btn-outline-primary mt-4">
+        <i class="bx bxs-plus-circle bx-md"></i>
+      </a>
+      <table class="table table-striped table-hover text-center mt-4">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Date</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% rows.forEach((row) => { %>
+          <tr>
+            <th scope="row"><%= row.id %></th>
+            <td><%= row.user %></td>
+            <td><%= row.role %></td>
+            <td>
+              <%= row.date_created.toLocaleDateString('es-ES', { weekday:
+              'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
+            </td>
+            <td>
+              <a href="/delete/<%= row.id %>" class="btn btn-outline-danger">
+                <i class="bx bxs-trash bx-sm"></i>
+              </a>
+            </td>
+            <td>
+              <a href="/edit/<%= row.id %>" class="btn btn-outline-success">
+                <i class="bx bxs-edit bx-sm"></i>
+              </a>
+            </td>
+          </tr>
+
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
