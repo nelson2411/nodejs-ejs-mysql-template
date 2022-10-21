@@ -19,10 +19,17 @@ app.use(express.json());
 dotenv.config({ path: "./env/.env" });
 
 // Set the cookie parser
-// app.use(cookieParser());
+app.use(cookieParser());
 
 //call the router for the index view
 app.use("/", require("./routes/router"));
+
+// Avoid go back to the login view after logout
+app.use(function (req, res, next) {
+  if (!req.user)
+    res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
+  next();
+});
 
 app.listen(3000, () => {
   console.log("Hey!! Your server is running in http://localhost:3000");
